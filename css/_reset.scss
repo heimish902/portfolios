@@ -1,0 +1,44 @@
+/* 변수 $*/
+$main-color: rgb(248, 229, 229);
+$sub-color: rgb(168, 114, 114);
+$sub2-color: #fddfdf;
+$font-color: rgb(83, 65, 65);
+$shadow-color: rgb(168, 104, 104);
+$common-size: 16px;
+$width: 100%;
+
+@mixin column($number) {
+  width: $width / $number;
+  height: 100%;
+}
+
+//.col-1 { @include column(1); }
+//.col-2 { @include column(2); }
+//.col-3 { @include column(3); }
+//.col-4 { @include column(4); }
+//.col-5 { @include column(5); }
+//.col-6 { @include column(6); }
+//.col-7 { @include column(7); }
+//.col-8 { @include column(8); }
+//.col-9 { @include column(9); }
+//.col-10 { @include column(10); }
+//.col-11 { @include column(11); }
+//.col-12 { @include column(12); }
+
+@mixin flex($direction, $align, $justify) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin position($position, $top, $left) {
+  position: $position;
+  top: $top;
+  left: $left;
+}
+
+@mixin widthHeight($width, $height) {
+  width: $width;
+  height: $height;
+}
