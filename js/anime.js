@@ -40,7 +40,7 @@ function header() {
 }
 
 window.addEventListener('scroll', () => {
-  header();
+  // header();
 
   startVivus('#svg1', svg1);
   startVivus('#svg2', svg2);
