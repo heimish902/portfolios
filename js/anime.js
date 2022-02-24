@@ -28,26 +28,6 @@ function showCont() {
   }
 }
 
-function header() {
-  const scrollTop = window.scrollY;
-  const header = document.querySelector('header');
-
-  if (scrollTop > 100) {
-    header.style.backgroundColor = 'rgba(254, 229, 220, 0.8)';
-  } else {
-    header.style.backgroundColor = 'transparent';
-  }
-}
-
-window.addEventListener('scroll', () => {
-  // header();
-
-  startVivus('#svg1', svg1);
-  startVivus('#svg2', svg2);
-  startVivus('#svg3', svg3);
-  showCont();
-});
-
 /* vivus */
 let svg1 = new Vivus('svg1', {
   type: 'delayed',
@@ -65,4 +45,66 @@ let svg3 = new Vivus('svg3', {
   type: 'delayed',
   duration: 100,
   file: '../image/707magnifyingglasstiltedleft_100258.svg',
+});
+
+const menu = document.querySelector('.menu_btn');
+const bar = document.querySelectorAll('.bar');
+const nav = document.querySelector('nav');
+
+function animate(a) {
+  const A = document.querySelector(a);
+  const B = A.querySelectorAll('div');
+  const scrollTop = window.scrollY;
+
+  B.forEach((b) => {
+    if (scrollTop > A.offsetTop - 500) {
+      b.classList.add('animate');
+    } else {
+      b.classList.remove('animate');
+    }
+  });
+}
+
+menu.addEventListener('click', function () {
+  bar.forEach((el) => {
+    el.classList.toggle('change');
+    menu.classList.toggle('close');
+  });
+
+  const bgBar = nav.querySelectorAll('.bg');
+  const li = nav.querySelectorAll('li');
+
+  bgBar.forEach((bg, i) => {
+    if (menu.classList.contains('close')) {
+      nav.style.display = 'block';
+      setTimeout(() => {
+        bgBar[i].style.opacity = 1;
+      }, 50 * i);
+      li.forEach((el, i) => {
+        setTimeout(() => {
+          el.style.transform = 'translate3d(0,0,0)';
+        }, 100 * i);
+      });
+    } else {
+      bg.style.opacity = 0;
+      nav.style.display = 'none';
+      li.forEach((el, i) => {
+        el.style.transform = 'translate3d(0,1000px,0)';
+      });
+    }
+  });
+});
+
+window.addEventListener('scroll', () => {
+  startVivus('#svg1', svg1);
+  startVivus('#svg2', svg2);
+  startVivus('#svg3', svg3);
+  showCont();
+
+  // animate
+  animate('.converse');
+  animate('.gshock');
+  animate('.startup');
+  animate('.movie');
+  animate('.mbti');
 });
