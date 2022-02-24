@@ -1,6 +1,12 @@
 @import './reset.css';
 @import './reset.scss';
-
+@import './animate.scss';
+body {
+  width: 100vw;
+  color: $font-color;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
 .inner {
   width: 1440px;
   margin: 0 auto;
@@ -9,55 +15,98 @@
 // header
 header {
   @include position(fixed, 0, 0);
-  width: 100%;
-  height: 80px;
-  background-color: transparent;
+  @include widthHeight(100%, 80px);
+  background-color: $bg-color;
   z-index: 600;
 
   .inner {
-    @include flex(row, center, space-between);
+    @include flex(null, center, space-between);
+    height: 100%;
   }
 
   .logo {
-    width: 50px;
-    height: 50px;
-    background-color: red;
+    a {
+      display: block;
+      font-size: 1.5em;
+      font-weight: 600;
+      color: $font-color;
+    }
+  }
+  .menu_btn {
+    .bar {
+      width: 35px;
+      height: 5px;
+      margin: 6px 0;
+      background-color: $font-color;
+      transition: all 0.5s;
+    }
   }
 }
 
+// menu click
+.bar1.change {
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+.bar2.change {
+  opacity: 0;
+}
+.bar3.change {
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+// nav
 nav {
+  @include position(fixed, 80px, 0);
+  display: none;
+  width: 100%;
+  height: calc(100vh - 80px);
+  z-index: 600;
+
   ul {
-    @include flex(row, center, center);
-
-    a {
-      display: block;
-      height: 80px;
-      padding: 0 10px;
-      line-height: 80px;
-      color: #000;
-      transition: all 0.3s;
-
-      &:hover {
-        color: red;
+    @include centerFixed(fixed, 50%, 50%);
+    text-align: center;
+    li {
+      transform: translate3d(0, 1000px, 0);
+      transition: all 0.8s;
+      a {
+        display: block;
+        margin-bottom: 50px;
+        color: $font-color;
+        font-size: 4em;
+        font-weight: 700;
+        text-transform: uppercase;
       }
     }
   }
 }
 
+.nav_bg {
+  @include flex(null, center, center);
+  height: 100%;
+  .bg {
+    width: 10%;
+    height: 100%;
+    opacity: 0;
+    background-color: #000;
+    transition: all 0.5s;
+  }
+}
+
 // banner
 #banner {
-  position: relative;
+  @include position(relative);
   height: 100vh;
-  background-color: #fee5dc;
+  background-color: $bg-color;
   z-index: 500;
 
   .inner {
-    @include flex(row, center, space-between);
+    @include flex(null, center, space-between);
     height: 100%;
   }
 
   .text {
     width: 50%;
+    padding: 20px;
     h1 {
       margin-bottom: 50px;
       font-size: 5em;
@@ -65,36 +114,48 @@ nav {
 
       span {
         display: block;
+        margin-bottom: 30px;
         font-size: 2rem;
+        text-transform: uppercase;
       }
     }
-    p {
-      width: 50%;
-    }
   }
-  img {
-    width: 30%;
-    padding: 50px;
+  .img_box {
+    width: 35%;
+    height: 500px;
+    background-color: $accent-color;
+
+    img {
+      width: 100%;
+      padding: 50px;
+      transform: rotate(-8deg);
+      background-color: $font-color;
+    }
   }
 }
 
 // about
 #about {
   padding-top: 10vh;
-  background-color: #f8e8cc;
+  background-color: $bg-color;
 
   .title {
     position: sticky;
     top: 20vh;
     margin-bottom: 10vh;
     text-align: center;
-    p {
+
+    .sub_title {
       margin-bottom: 30px;
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: 600;
+      color: $accent-color;
     }
     h2 {
       font-size: 4em;
       font-weight: 600;
-      color: #444;
+      color: $font-color;
     }
   }
 }
@@ -109,7 +170,7 @@ nav {
   @include flex(column, center, center);
   position: sticky;
   top: 50vh;
-  color: #000;
+  color: $font-color;
   background-color: whitesmoke;
 
   &:nth-of-type(1) {
@@ -122,14 +183,14 @@ nav {
   }
   &:nth-of-type(3) {
     grid-area: 1/3/1/4;
-    background-color: #f8e8cc;
+    background-color: $bg-color;
   }
   &:nth-of-type(4) {
     grid-area: 2/2/3/3;
   }
   &:nth-of-type(5) {
     grid-area: 3/1/4/2;
-    background-color: #f8e8cc;
+    background-color: $bg-color;
   }
   &:nth-of-type(6) {
     grid-area: 3/3/4/4;
@@ -145,7 +206,7 @@ nav {
   }
   &:nth-of-type(9) {
     grid-area: 5/2/6/3;
-    background-color: #f8e8cc;
+    background-color: $bg-color;
   }
   > .text {
     width: 80%;
@@ -175,9 +236,10 @@ nav {
 
 .ability {
   grid-area: 6/1/7/4;
-  height: 50vh;
+  height: 51vh;
   padding: 0 50px;
-  top: 50vh;
+  top: 49vh;
+  background: $bg-color;
 
   .inner {
     @include flex(row, center, space-between);
@@ -222,7 +284,7 @@ nav {
   .progress_bar {
     width: 0%;
     height: 40px;
-    background-color: #49a6d1;
+    background-color: #f5bf0e;
     transition: width 1s;
   }
 }
@@ -230,7 +292,7 @@ nav {
 // project
 #project {
   padding: 10vh 0;
-  background-color: #fee6dd;
+  background-color: $bg-color;
 }
 .section {
   @include flex(row, center, space-between);
@@ -240,24 +302,27 @@ nav {
   height: 85vh;
   padding: 20px;
   margin-bottom: 10vh;
-  border: 1px solid #fff;
-  background-color: #fee6dd;
+  background-color: $bg-color;
 
   &:last-of-type {
     margin-bottom: 0;
   }
   .desc {
-    text-align: left;
-
-    p {
+    .sub_title {
       margin-bottom: 10px;
       font-weight: 600;
+      font-size: 18px;
+      color: $accent-color;
+    }
+    p {
+      margin-bottom: 30px;
     }
     h3 {
       margin-bottom: 30px;
       font-size: 4em;
       font-weight: 600;
     }
+
     .buttons {
       margin-top: 50px;
     }
@@ -265,16 +330,38 @@ nav {
       width: 200px;
       padding: 20px;
       margin-right: 20px;
+      color: $font-color;
       background-color: transparent;
       border-radius: 30px;
+      border: 1px solid $accent-color;
     }
   }
 
-  &:nth-of-type(even) .desc {
-    text-align: right;
-  }
   &:nth-of-type(odd) img.mobile_small {
     left: 0;
+  }
+  .desc.left {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+    text-align: left;
+  }
+  .desc.right {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+    text-align: right;
+  }
+  .desc.animate {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: all 800ms;
+  }
+  .thum {
+    opacity: 0;
+  }
+  .thum.animate {
+    opacity: 1;
+    transition: all 1s;
+    transition-delay: 500ms;
   }
 }
 
@@ -302,9 +389,13 @@ nav {
   }
 }
 
+.btn {
+  @include btn-border-slide($font-color, $accent-color, 1px, 0.5s);
+  color: $font-color;
+}
 /* Contact */
 #contact {
   width: 100%;
   height: 100vh;
-  background-color: floralwhite;
+  background-color: $bg-color;
 }
