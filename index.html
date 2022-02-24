@@ -19,32 +19,51 @@
       <header>
         <div class="inner">
           <div class="logo">
-            <a href="#">
-              <span class="hidden">Home</span>
-            </a>
+            <a href="#">ParkJiHo</a>
           </div>
-          <nav>
-            <ul>
-              <li>
-                <a href="#about">ABOUT ME</a>
-              </li>
-              <li>
-                <a href="#project">PROJECT</a>
-              </li>
-              <li>
-                <a href="#contact">CONTACT</a>
-              </li>
-            </ul>
-          </nav>
+          <div class="menu_btn">
+            <div class="bar bar1"></div>
+            <div class="bar bar2"></div>
+            <div class="bar bar3"></div>
+          </div>
         </div>
       </header>
 
+      <!-- nav -->
+      <nav>
+        <div class="nav_bg">
+          <div class="bg"></div>
+          <div class="bg"></div>
+          <div class="bg"></div>
+          <div class="bg"></div>
+          <div class="bg"></div>
+          <div class="bg"></div>
+          <div class="bg"></div>
+          <div class="bg"></div>
+          <div class="bg"></div>
+          <div class="bg"></div>
+        </div>
+        <ul>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#project">Project</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
       <!-- banner-->
       <section id="banner">
         <div class="inner">
+          <div class="img_box">
+            <img src="./image/Sticky Notes.png" alt="" />
+          </div>
           <div class="text">
             <h1>
-              <span>WELCOME TO MY WEBSITE!</span>
+              <span>Welcome to my website</span>
               I'm JiHo PARK<br />
             </h1>
             <p>
@@ -54,14 +73,13 @@
               asperiores delectus laudantium id.
             </p>
           </div>
-          <img src="./image/Sticky Notes.png" alt="" />
         </div>
       </section>
 
       <!-- about me-->
       <section id="about">
         <div class="title">
-          <p>Features & Benefits</p>
+          <p class="sub_title">Personality & Strengths</p>
           <h2>Great Is More Than<br />the Sum of Its Parts</h2>
         </div>
         <div class="row">
@@ -131,8 +149,7 @@
           <div class="box ability">
             <div class="inner">
               <div class="text">
-                <h3>저는 이런 것들을 할 수 있어요!</h3>
-                <p>다른 것들도 공부 중이니까 지켜봐주세요❤</p>
+                <h3>SKILL</h3>
               </div>
               <div class="ability_container">
                 <div class="skill_progress">
@@ -185,15 +202,22 @@
       <section id="project">
         <h2 class="hidden">PROJECT</h2>
         <div class="inner">
-          <div class="section">
-            <div class="desc">
-              <p>CONVERSE CLONE CODING</p>
+          <div class="section converse">
+            <div class="desc left">
+              <p class="sub_title">CONVERSE CLONE CODING</p>
               <h3>RESPONSIVE<br />WEB DESIGN</h3>
               <p>컨버스 클론코딩</p>
-              <div class="buttons">
-                <button>WEBSITE</button>
-                <button>GITHUB</button>
-              </div>
+              <a
+                class="btn"
+                href="https://heimish902.github.io/converse/"
+                target="_blank"
+              >
+                <span>
+                  <span>
+                    <span>WEBSITE</span>
+                  </span>
+                </span>
+              </a>
             </div>
             <div class="thum">
               <img src="./image/converse_pc.png" />
@@ -204,7 +228,7 @@
               />
             </div>
           </div>
-          <div class="section">
+          <div class="section gshock">
             <div class="thum">
               <img src="./image/gshock_pc.png" alt="" />
               <img
@@ -213,25 +237,39 @@
                 class="mobile_small"
               />
             </div>
-            <div class="desc">
-              <p>GSHOCK RENEWAL</p>
+            <div class="desc right">
+              <p class="sub_title">GSHOCK RENEWAL</p>
               <h3>RESPONSIVE<br />WEB DESIGN</h3>
               <p>GSHOCK 리뉴얼 디자인 & 코딩</p>
-              <div class="buttons">
-                <button>WEBSITE</button>
-                <button>GITHUB</button>
-              </div>
+              <a
+                class="btn"
+                href="https://heimish902.github.io/gshock/"
+                target="_blank"
+              >
+                <span>
+                  <span>
+                    <span>WEBSITE</span>
+                  </span>
+                </span>
+              </a>
             </div>
           </div>
-          <div class="section">
-            <div class="desc">
-              <p>STARTUP MATE</p>
+          <div class="section startup">
+            <div class="desc left">
+              <p class="sub_title">STARTUP MATE</p>
               <h3>RESPONSIVE<br />WEB DESIGN</h3>
               <p>기업형 웹사이트 코딩</p>
-              <div class="buttons">
-                <button>WEBSITE</button>
-                <button>GITHUB</button>
-              </div>
+              <a
+                class="btn"
+                href="https://heimish902.github.io/start-up/"
+                target="_blank"
+              >
+                <span>
+                  <span>
+                    <span>WEBSITE</span>
+                  </span>
+                </span>
+              </a>
             </div>
             <div class="thum">
               <img src="./image/startup_pc.png" alt="" />
@@ -242,29 +280,43 @@
               />
             </div>
           </div>
-          <div class="section">
+          <div class="section movie">
             <div class="thum">
               <img src="./image/movie_introduction.png" alt="" />
             </div>
-            <div class="desc">
-              <p>MOVIE INTRODUCTION</p>
+            <div class="desc right">
+              <p class="sub_title">MOVIE INTRODUCTION</p>
               <h3>REACT <br />WEB DESIGN</h3>
               <p>API를 활용한 영화 소개 사이트</p>
-              <div class="buttons">
-                <button>WEBSITE</button>
-                <button>GITHUB</button>
-              </div>
+              <a
+                class="btn"
+                href="https://heimish902.github.io/Movie-introduction/"
+                target="_blank"
+              >
+                <span>
+                  <span>
+                    <span>WEBSITE</span>
+                  </span>
+                </span>
+              </a>
             </div>
           </div>
-          <div class="section">
-            <div class="desc">
-              <p>MBTI TEST</p>
+          <div class="section mbti">
+            <div class="desc left">
+              <p class="sub_title">MBTI TEST</p>
               <h3>MOBILE <br />WEB DESIGN</h3>
               <p>나와 닮은 짱구는 못말려 속 캐릭터 찾기</p>
-              <div class="buttons">
-                <button>WEBSITE</button>
-                <button>GITHUB</button>
-              </div>
+              <a
+                class="btn"
+                href="https://heimish902.github.io/MBTI-test/"
+                target="_blank"
+              >
+                <span>
+                  <span>
+                    <span>WEBSITE</span>
+                  </span>
+                </span>
+              </a>
             </div>
             <div class="thum">
               <img src="./image/mobile (1).png" alt="" class="mobile" />
@@ -274,7 +326,9 @@
       </section>
 
       <!-- contact -->
-      <section id="contact"></section>
+      <section id="contact">
+        <h2>CONTACT ME</h2>
+      </section>
     </div>
   </body>
 
