@@ -5,13 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width= device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- custom css -->
     <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://unpkg.com/pageable@latest/dist/pageable.min.css"
-    />
-    <title>신입 개발자 박지호 입니다</title>
+    <title>ParkJiHo</title>
   </head>
   <body>
     <div class="wrap">
@@ -55,6 +52,7 @@
           </li>
         </ul>
       </nav>
+
       <!-- banner-->
       <section id="banner">
         <div class="inner">
@@ -62,17 +60,35 @@
             <img src="./image/Sticky Notes.png" alt="" />
           </div>
           <div class="text">
+            <p>Welcome to my portfolio</p>
             <h1>
-              <span>Welcome to my website</span>
-              I'm JiHo PARK<br />
+              I'm
+              <span class="typeit"></span>
             </h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
-              dolore exercitationem, ipsa sequi modi numquam unde delectus.
-              Aspernatur, distinctio quaerat maxime omnis ullam quo illum dolor
-              asperiores delectus laudantium id.
-            </p>
           </div>
+        </div>
+
+        <!-- mouse -->
+        <div class="scroll-link">
+          <svg
+            class="mouse"
+            xmlns="..."
+            viewBox="0 0 76 130"
+            preserveAspectRatio="xMidYmid meet"
+          >
+            <g fill="none" fill-rule="evenodd">
+              <rect
+                width="70"
+                height="118"
+                x="1.5"
+                y="1.5"
+                stroke="#FFF"
+                stroke-width="3"
+                rx="36"
+              />
+              <circle class="scroll" cx="36.5" cy="31.5" r="4.5" fill="#FFF" />
+            </g>
+          </svg>
         </div>
       </section>
 
@@ -82,6 +98,8 @@
           <p class="sub_title">Personality & Strengths</p>
           <h2>Great Is More Than<br />the Sum of Its Parts</h2>
         </div>
+
+        <!-- grid -->
         <div class="row">
           <div class="box">
             <img src="./image/615bicycle_100568.svg" alt="" />
@@ -201,7 +219,9 @@
       <!-- project -->
       <section id="project">
         <h2 class="hidden">PROJECT</h2>
+
         <div class="inner">
+          <!-- converse -->
           <div class="section converse">
             <div class="desc left">
               <p class="sub_title">CONVERSE CLONE CODING</p>
@@ -228,6 +248,7 @@
               />
             </div>
           </div>
+          <!-- gshock-->
           <div class="section gshock">
             <div class="thum">
               <img src="./image/gshock_pc.png" alt="" />
@@ -254,6 +275,7 @@
               </a>
             </div>
           </div>
+          <!-- startup -->
           <div class="section startup">
             <div class="desc left">
               <p class="sub_title">STARTUP MATE</p>
@@ -280,6 +302,7 @@
               />
             </div>
           </div>
+          <!-- movie introduction-->
           <div class="section movie">
             <div class="thum">
               <img src="./image/movie_introduction.png" alt="" />
@@ -301,6 +324,7 @@
               </a>
             </div>
           </div>
+          <!-- mbti test-->
           <div class="section mbti">
             <div class="desc left">
               <p class="sub_title">MBTI TEST</p>
@@ -334,14 +358,10 @@
 
   <!-- jquery -->
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-
   <!-- vivus -->
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.6/vivus.min.js"
-    integrity="sha512-oUUeA7VTcWBqUJD/VYCBB4VeIE0g1pg5aRMiSUOMGnNNeCLRS39OlkcyyeJ0hYx2h3zxmIWhyKiUXKkfZ5Wryg=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.3/vivus.min.js"></script>
+  <!-- Typeit-->
+  <script src="https://unpkg.com/typeit@8.2.0/dist/index.umd.js"></script>
 
   <!-- custom js -->
   <script src="./js/anime.js"></script>
