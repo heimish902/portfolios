@@ -9,19 +9,19 @@ const progress = document.querySelectorAll('.progress_bar');
 let svg1 = new Vivus('svg1', {
   type: 'delayed',
   duration: 100,
-  file: '../image/624airplane_100621.svg',
+  file: './image/624airplane_100621.svg',
 });
 
 let svg2 = new Vivus('svg2', {
   type: 'delayed',
   duration: 100,
-  file: '../image/7_85262.svg',
+  file: './image/7_85262.svg',
 });
 
 let svg3 = new Vivus('svg3', {
   type: 'delayed',
   duration: 100,
-  file: '../image/707magnifyingglasstiltedleft_100258.svg',
+  file: './image/707magnifyingglasstiltedleft_100258.svg',
 });
 
 /* typeit */
