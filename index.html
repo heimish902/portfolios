@@ -6,8 +6,14 @@
     <meta name="viewport" content="width= device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
+    <!-- web font / icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+
     <!-- custom css -->
-    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
     <title>ParkJiHo</title>
   </head>
@@ -57,9 +63,7 @@
       <!-- banner-->
       <section id="banner">
         <div class="inner">
-          <div class="img_box">
-            <img src="./image/Sticky Notes.png" alt="" />
-          </div>
+          <div class="img_box"></div>
           <div class="text">
             <p>Welcome to my portfolio</p>
             <h1>
@@ -71,12 +75,7 @@
 
         <!-- mouse -->
         <div class="scroll-link">
-          <svg
-            class="mouse"
-            xmlns="..."
-            viewBox="0 0 76 130"
-            preserveAspectRatio="xMidYmid meet"
-          >
+          <svg class="mouse" xmlns="..." viewBox="0 0 76 130">
             <g fill="none" fill-rule="evenodd">
               <rect
                 width="70"
@@ -148,7 +147,7 @@
             <div id="svg3" class="svg"></div>
           </div>
           <div class="box">
-            <img src="./image/.svg" alt="" />
+            <img src="./image/7_85262.svg" alt="" />
           </div>
           <div class="box">
             <div class="text">
@@ -354,20 +353,60 @@
       <section id="contact">
         <div class="inner">
           <h2>CONTACT ME</h2>
-          <form action="">
-            <input type="text">
-            <input type="text">
-            <textarea name="" id="" cols="30" rows="10"></textarea>
+          <form action="./contact.php" method="post">
+            <div class="input_box">
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Your name"
+              />
+            </div>
+            <div class="input_box">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Your Email"
+              />
+            </div>
+            <textarea
+              name="message"
+              id="message"
+              cols="30"
+              rows="10"
+              placeholder="Message Here"
+            ></textarea>
+            <button type="submit">SEND</button>
           </form>
-          <div class="contact_top">
+          <div class="contact_icon">
             <ul>
-              <li><a href="#">github</a></li>
-              <li><a href="#">instagram</a></li>
-              <li><a href="#">google</a></li>
+              <li>
+                <a href="https://github.com/heimish902" target="_blank">
+                  <i class="fab fa-github">
+                    <span class="hidden">github</span>
+                  </i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/heimish__web/"
+                  target="_blank"
+                >
+                  <i class="fab fa-instagram">
+                    <span class="hidden">instagram</span>
+                  </i>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:heimish902@gmail.com">
+                  <i class="fab fa-google">
+                    <span class="hidden">goole</span>
+                  </i>
+                </a>
+              </li>
             </ul>
           </div>
-         
-          
         </div>
       </section>
     </div>
