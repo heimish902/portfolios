@@ -3290,20 +3290,21 @@ nav ul li a {
 #banner .inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   height: 100%;
 }
 #banner .text {
-  width: 50%;
   padding: 20px;
 }
 #banner .text p {
   margin-bottom: 30px;
   font-size: 2em;
   font-weight: 600;
+  text-align: center;
   text-transform: uppercase;
 }
 #banner .text h1 {
+  max-width: 600px;
   font-size: 5em;
   font-weight: 600;
 }
@@ -3334,30 +3335,6 @@ nav ul li a {
   max-width: 2.5rem;
   width: 100%;
   height: auto;
-}
-@-webkit-keyframes scroll {
-  0%, 20% {
-    transform: translateY(0) scaleY(1);
-  }
-  10% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(36px) scaleY(2);
-    opacity: 0.01;
-  }
-}
-@keyframes scroll {
-  0%, 20% {
-    transform: translateY(0) scaleY(1);
-  }
-  10% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(36px) scaleY(2);
-    opacity: 0.01;
-  }
 }
 #banner .scroll {
   -webkit-animation-name: scroll;
@@ -3494,27 +3471,64 @@ nav ul li a {
   line-height: 1.2em;
 }
 
-.ability_container {
+.charts {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: space-between;
-}
-
-.skill_progress {
-  display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 30px;
+  width: 80%;
+  margin-top: 60px;
 }
-.skill_progress h4 {
-  margin-right: 30px;
+.charts .chart {
+  position: relative;
+}
+.charts .chart h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #1e1e1e;
+}
+.charts .chart:before {
+  display: block;
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 1.5em;
   font-weight: 600;
 }
-.skill_progress:last-of-type {
-  margin-bottom: 0;
+.charts .chart:nth-of-type(1):before {
+  content: "HTML";
+}
+.charts .chart:nth-of-type(2):before {
+  content: "CSS";
+}
+.charts .chart:nth-of-type(3):before {
+  content: "JavaScript";
+}
+.charts .chart:nth-of-type(4):before {
+  content: "JQuery";
+}
+.charts .chart:nth-of-type(5):before {
+  content: "React";
+}
+.charts svg {
+  width: 220px;
+  height: 220px;
+}
+.charts svg circle {
+  stroke: #eb660e;
+  stroke-width: 20;
+  stroke-dasharray: 628;
+  stroke-dashoffset: 628;
+  stroke-linecap: round;
+  fill: #fff;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  -webkit-animation: line 2s forwards;
+          animation: line 2s forwards;
 }
 
 .bar_container {
@@ -3799,4 +3813,30 @@ form button:hover {
 .contact_icon ul li a > i {
   padding: 0 10px;
   font-size: 1.5em;
+}
+
+@-webkit-keyframes scroll {
+  0%, 20% {
+    transform: translateY(0) scaleY(1);
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(36px) scaleY(2);
+    opacity: 0.01;
+  }
+}
+
+@keyframes scroll {
+  0%, 20% {
+    transform: translateY(0) scaleY(1);
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(36px) scaleY(2);
+    opacity: 0.01;
+  }
 }/*# sourceMappingURL=style.css.map */

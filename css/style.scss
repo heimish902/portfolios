@@ -99,20 +99,21 @@ nav {
   z-index: 500;
 
   .inner {
-    @include flex(null, center, space-between);
+    @include flex(null, center, center);
     height: 100%;
   }
 
   .text {
-    width: 50%;
     padding: 20px;
     p {
       margin-bottom: 30px;
       font-size: 2em;
       font-weight: 600;
+      text-align: center;
       text-transform: uppercase;
     }
     h1 {
+      max-width: 600px;
       font-size: 5em;
       font-weight: 600;
 
@@ -147,19 +148,7 @@ nav {
     width: 100%;
     height: auto;
   }
-  @keyframes scroll {
-    0%,
-    20% {
-      transform: translateY(0) scaleY(1);
-    }
-    10% {
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(36px) scaleY(2);
-      opacity: 0.01;
-    }
-  }
+
   .scroll {
     animation-name: scroll;
     animation-duration: 1.5s;
@@ -289,21 +278,64 @@ nav {
     }
   }
 }
-.ability_container {
-  @include flex(column, flex-end, space-between);
-}
-.skill_progress {
-  @include flex(row, center, space-between);
-  margin-bottom: 30px;
+.charts {
+  @include flex(null, center, space-between);
+  width: 80%;
+  margin-top: 60px;
 
-  h4 {
-    margin-right: 30px;
-    font-size: 1.5em;
-    font-weight: 600;
+  .chart {
+    position: relative;
+
+    h2 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.5em;
+      font-weight: 600;
+      color: $bg-color;
+    }
+    &:before {
+      display: block;
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.5em;
+      font-weight: 600;
+    }
+    &:nth-of-type(1):before {
+      content: 'HTML';
+    }
+    &:nth-of-type(2):before {
+      content: 'CSS';
+    }
+    &:nth-of-type(3):before {
+      content: 'JavaScript';
+    }
+    &:nth-of-type(4):before {
+      content: 'JQuery';
+    }
+    &:nth-of-type(5):before {
+      content: 'React';
+    }
   }
 
-  &:last-of-type {
-    margin-bottom: 0;
+  svg {
+    width: 220px;
+    height: 220px;
+
+    circle {
+      stroke: $accent-color;
+      stroke-width: 20;
+      stroke-dasharray: 628;
+      stroke-dashoffset: 628;
+      stroke-linecap: round;
+      fill: $font-color;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+      animation: line 2s forwards;
+    }
   }
 }
 
@@ -427,6 +459,7 @@ nav {
   @include btn-border-slide($font-color, $accent-color, 1px, 0.5s);
   color: $font-color;
 }
+
 /* Contact */
 #contact {
   position: relative;
@@ -520,3 +553,27 @@ form {
     }
   }
 }
+
+// animation
+@keyframes scroll {
+  0%,
+  20% {
+    transform: translateY(0) scaleY(1);
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(36px) scaleY(2);
+    opacity: 0.01;
+  }
+}
+
+// @keyframes line {
+//   from {
+//     stroke-dashoffset: 628;
+//   }
+//   to {
+//     stroke-dashoffset: 0;
+//   }
+// }
