@@ -37,51 +37,6 @@ document.addEventListener('DOMContentLoaded', function () {
     .go();
 });
 
-// svg animation
-function startVivus(a, b) {
-  const scrollTop = window.scrollY;
-  const section = document.querySelector(a);
-  const top = window.pageYOffset + section.getBoundingClientRect().top;
-  if (scrollTop > top - window.innerHeight) {
-    b.play();
-  } else {
-    b.reset();
-  }
-}
-
-// skill animation
-function showCont() {
-  const scrollTop = window.scrollY;
-  const container = document.querySelector('.ability');
-  const top = window.pageYOffset + container.getBoundingClientRect().top;
-
-  if (scrollTop > top - window.innerHeight / 1.3) {
-    progress.forEach((el) => {
-      let text = el.lastElementChild.innerHTML;
-      el.style.width = text;
-    });
-  } else {
-    progress.forEach((el) => {
-      el.style.width = '0%';
-    });
-  }
-}
-
-// project animation
-function animate(a) {
-  const A = document.querySelector(a);
-  const B = A.querySelectorAll('div');
-  const scrollTop = window.scrollY;
-
-  B.forEach((b) => {
-    if (scrollTop > A.offsetTop - 500) {
-      b.classList.add('animate');
-    } else {
-      b.classList.remove('animate');
-    }
-  });
-}
-
 // nav link click event
 li.forEach((el) => {
   el.addEventListener('click', () => {
@@ -122,17 +77,80 @@ menu.addEventListener('click', function () {
   });
 });
 
+// svg animation
+function startVivus(scrollTop, a, b) {
+  const section = document.querySelector(a);
+  const top = window.pageYOffset + section.getBoundingClientRect().top;
+  if (scrollTop > top - window.innerHeight) {
+    b.play();
+  } else {
+    b.reset();
+  }
+}
+
+// project animation
+function animate(scrollTop, a) {
+  const A = document.querySelector(a);
+  const B = A.querySelectorAll('div');
+
+  B.forEach((b) => {
+    if (scrollTop > A.offsetTop - 500) {
+      b.classList.add('animate');
+    } else {
+      b.classList.remove('animate');
+    }
+  });
+}
+
+// progress animation
+let chart = $('.chart');
+let isAni = false;
+
+function skillAni(scrollTop) {
+  let chartOST = chart.offset().top - 700;
+  console.log(isAni);
+
+  if (scrollTop >= chartOST) {
+    if (isAni == false) {
+      chart.each(function () {
+        let item = $(this);
+        let title = item.find('h2');
+        let targetNum = title.attr('data-num');
+        let circle = item.find('circle');
+
+        $({ rate: 0 }).animate(
+          { rate: targetNum },
+          {
+            duration: 1500,
+            progress: function () {
+              let now = this.rate;
+              let amount = 630 - (630 * now) / 100;
+              title.text(Math.floor(now));
+              circle.css({ strokeDashoffset: amount });
+            },
+          }
+        );
+      }); // chart each
+      isAni = true;
+    }
+  } else {
+    isAni = false;
+  }
+}
+
 // scroll animation
 window.addEventListener('scroll', () => {
-  startVivus('#svg1', svg1);
-  startVivus('#svg2', svg2);
-  startVivus('#svg3', svg3);
+  const scrollTop = window.scrollY;
 
-  showCont();
+  startVivus(scrollTop, '#svg1', svg1);
+  startVivus(scrollTop, '#svg2', svg2);
+  startVivus(scrollTop, '#svg3', svg3);
 
-  animate('.converse');
-  animate('.gshock');
-  animate('.startup');
-  animate('.movie');
-  animate('.mbti');
+  animate(scrollTop, '.converse');
+  animate(scrollTop, '.gshock');
+  animate(scrollTop, '.startup');
+  animate(scrollTop, '.movie');
+  animate(scrollTop, '.mbti');
+
+  skillAni(scrollTop);
 });
