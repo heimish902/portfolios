@@ -63,7 +63,6 @@
       <!-- banner-->
       <section id="banner">
         <div class="inner">
-          <div class="img_box"></div>
           <div class="text">
             <p>Welcome to my portfolio</p>
             <h1>
@@ -98,7 +97,6 @@
           <p class="sub_title">Personality & Strengths</p>
           <h2>Great Is More Than<br />the Sum of Its Parts</h2>
         </div>
-
         <!-- grid -->
         <div class="row">
           <div class="box">
@@ -165,53 +163,38 @@
             </div>
           </div>
           <div class="box ability">
-            <div class="inner">
-              <div class="text">
-                <h3>SKILL</h3>
+            <div class="charts">
+              <div class="chart">
+                <h2 data-num="90">0</h2>
+                <svg>
+                  <circle cx="110" cy="110" r="100"></circle>
+                </svg>
               </div>
-              <div class="ability_container">
-                <div class="skill_progress">
-                  <h4>HTML</h4>
-                  <div class="bar_container">
-                    <div class="progress_bar">
-                      <p class="hidden">90%</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="skill_progress">
-                  <h4>CSS</h4>
-                  <div class="bar_container">
-                    <div class="progress_bar">
-                      <p class="hidden">85%</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="skill_progress">
-                  <h4>JavaScript</h4>
-                  <div class="bar_container">
-                    <div class="progress_bar">
-                      <p class="hidden">80%</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="skill_progress">
-                  <h4>React</h4>
-                  <div class="bar_container">
-                    <div class="progress_bar">
-                      <p class="hidden">70%</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="skill_progress">
-                  <h4>Vue</h4>
-                  <div class="bar_container">
-                    <div class="progress_bar">
-                      <p class="hidden">60%</p>
-                    </div>
-                  </div>
-                </div>
+              <div class="chart">
+                <h2 data-num="90">0</h2>
+                <svg>
+                  <circle cx="110" cy="110" r="100"></circle>
+                </svg>
               </div>
-            </div>
+              <div class="chart">
+                <h2 data-num="80">0</h2>
+                <svg>
+                  <circle cx="110" cy="110" r="100"></circle>
+                </svg>
+              </div>
+              <div class="chart">
+                <h2 data-num="80">0</h2>
+                <svg>
+                  <circle cx="110" cy="110" r="100"></circle>
+                </svg>
+              </div>
+              <div class="chart">
+                <h2 data-num="70">0</h2>
+                <svg>
+                  <circle cx="110" cy="110" r="100"></circle>
+                </svg>
+              </div>
+
           </div>
         </div>
       </section>
@@ -353,7 +336,7 @@
       <section id="contact">
         <div class="inner">
           <h2>CONTACT ME</h2>
-          <form action="./contact.php" method="post">
+          <form action="./contact.php" method="POST">
             <div class="input_box">
               <input
                 type="text"
@@ -421,4 +404,5 @@
 
   <!-- custom js -->
   <script src="./js/anime.js"></script>
+  <script src="./js/progress.js"></script>
 </html>
